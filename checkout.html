@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BeatFlow - Checkout</title>
+  <link rel="shortcut icon" href="./img/favicon.png">
+  <meta name="description" content="Simulación de pago en BeatFlow.">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body id="page-checkout">
+
+  <header class="header" role="banner">
+    <a href="index.html" class="logo" aria-label="BeatFlow - inicio">
+      <i class="fas fa-headphones" aria-hidden="true"></i>
+      <h1>BeatFlow</h1>
+    </a>
+
+    <input type="checkbox" id="menu-toggle" class="nav-toggle" aria-label="Abrir menú de navegación">
+    <label for="menu-toggle" class="menu-icon"><i class="fas fa-bars"></i></label>
+
+    <nav class="nav" role="navigation">
+      <ul>
+        <li><a href="index.html" class="nav-link" data-nav="inicio"><i class="fas fa-house"></i> Inicio</a></li>
+        <li><a href="catalogo.html" class="nav-link" data-nav="catalogo"><i class="fas fa-compact-disc"></i> Catálogo</a></li>
+        <li><button id="nav-search-btn" class="nav-btn"><i class="fas fa-magnifying-glass"></i> Buscar</button></li>
+        <li>
+          <button id="cart-toggle" class="nav-btn" aria-controls="cart-panel" aria-expanded="false">
+            <i class="fas fa-cart-shopping"></i>
+            <span class="visually-hidden">Abrir carrito</span>
+            <span id="cart-count" class="cart-count" aria-live="polite">0</span>
+          </button>
+        </li>
+        <li><a href="contacto.html" class="nav-link" data-nav="contacto"><i class="fas fa-envelope"></i> Contacto</a></li>
+        <li><a href="login.html" class="nav-link" data-nav="login"><i class="fas fa-user"></i> Login</a></li>
+        <li><a href="register.html" class="nav-link" data-nav="registro"><i class="fas fa-user-plus"></i> Registro</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main-auth" id="main">
+    <div class="auth-container">
+      <h2 class="auth-title">Checkout</h2>
+      <p class="auth-subtitle">Revisá tu pedido y completá los datos para finalizar el pago.</p>
+
+      <div id="checkout-items" class="checkout-items"></div>
+
+      <form id="payment-form" class="auth-form" novalidate>
+        <label for="card-name">Nombre en la tarjeta</label>
+        <input id="card-name" name="cardName" type="text" required>
+
+        <label for="card-number">Número de tarjeta</label>
+        <input id="card-number" name="cardNumber" type="text" required>
+
+        <label for="card-exp">Expiración (MM/AA)</label>
+        <input id="card-exp" name="cardExp" type="text" required>
+
+        <label for="card-cvc">CVC</label>
+        <input id="card-cvc" name="cardCvc" type="password" required maxlength="3">
+
+        <div class="summary-row checkout-total-row">
+          <span>Total</span>
+          <strong>$ <span id="checkout-total">0.00</span></strong>
+        </div>
+
+        <button class="btn" type="submit">Pagar</button>
+        <p id="payment-msg" class="auth-feedback" role="status"></p>
+      </form>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="social">
+      <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.spotify.com/" target="_blank" rel="noopener noreferrer" aria-label="Spotify"><i class="fab fa-spotify"></i></a>
+      <a href="https://soundcloud.com/" target="_blank" rel="noopener noreferrer" aria-label="Soundcloud"><i class="fab fa-soundcloud"></i></a>
+      <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+    </div>
+    <p>© 2025 BeatFlow - Todos los derechos reservados</p>
+  </footer>
+
+  <script src="./js/script.js" defer></script>
+
+
+
+</body>
+</html>

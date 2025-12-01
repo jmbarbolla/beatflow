@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BeatFlow - Resultados de búsqueda</title>
+  <link rel="shortcut icon" href="./img/favicon.png">
+  <meta name="description" content="Resultados de búsqueda en BeatFlow.">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body id="page-search-results">
+
+  <header class="header" role="banner">
+    <a href="index.html" class="logo" aria-label="BeatFlow - inicio">
+      <i class="fas fa-headphones" aria-hidden="true"></i>
+      <h1>BeatFlow</h1>
+    </a>
+
+    <input type="checkbox" id="menu-toggle" class="nav-toggle" aria-label="Abrir menú de navegación">
+    <label for="menu-toggle" class="menu-icon"><i class="fas fa-bars"></i></label>
+
+    <nav class="nav" role="navigation" aria-label="Navegación principal">
+      <ul>
+        <li><a href="index.html" class="nav-link" data-nav="inicio"><i class="fas fa-house" aria-hidden="true"></i> Inicio</a></li>
+        <li><a href="catalogo.html" class="nav-link" data-nav="catalogo"><i class="fas fa-compact-disc" aria-hidden="true"></i> Catálogo</a></li>
+        <li><button id="nav-search-btn" class="nav-btn" aria-label="Abrir búsqueda"><i class="fas fa-magnifying-glass" aria-hidden="true"></i> Buscar</button></li>
+        <li>
+          <button id="cart-toggle" class="nav-btn" aria-controls="cart-panel" aria-expanded="false">
+            <i class="fas fa-cart-shopping" aria-hidden="true"></i> Carrito
+            <span id="cart-count" class="cart-count" aria-live="polite">0</span>
+          </button>
+        </li>
+        <li><a href="contacto.html" class="nav-link" data-nav="contacto"><i class="fas fa-envelope" aria-hidden="true"></i> Contacto</a></li>
+        <li><a href="login.html" class="nav-link" data-nav="login"><i class="fas fa-user" aria-hidden="true"></i> Login</a></li>
+        <li><a href="register.html" class="nav-link" data-nav="registro"><i class="fas fa-user-plus" aria-hidden="true"></i> Registro</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div id="search-modal" class="modal hidden" role="dialog">
+    <div class="modal-content" role="document">
+      <header class="modal-header">
+        <h2 id="search-title">Buscar música</h2>
+      </header>
+      <div class="modal-body">
+        <input id="modal-search-input" type="search" class="modal-input" placeholder="Buscar artista, álbum o canción…" aria-label="Buscar música">
+        <button id="modal-search-btn" class="btn">Buscar</button>
+        <button id="modal-cancel-btn" class="btn-secondary-outline">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <aside id="cart-panel" class="cart-panel" aria-hidden="true" aria-labelledby="cart-title">
+    <header class="cart-panel__header">
+      <h3 id="cart-title">Tu carrito</h3>
+      <div class="cart-controls">
+        <button id="clear-cart" class="btn-secondary-outline">Vaciar</button>
+        <button id="close-cart" class="btn-secondary-outline">Cerrar</button>
+      </div>
+    </header>
+
+    <div id="cart-items" class="cart-items" tabindex="0" aria-live="polite"></div>
+
+    <div class="cart-summary">
+      <div class="summary-row">
+        <span>Total</span>
+        <strong>$ <span id="cart-total">0.00</span></strong>
+      </div>
+      <button id="checkout" class="btn">Finalizar compra</button>
+    </div>
+  </aside>
+
+  <main id="main" class="site-main">
+    <section class="productos" aria-label="Resultados de búsqueda">
+      <h2 class="section-title">Resultados de búsqueda</h2>
+      <p id="results-info" class="muted" aria-live="polite"></p>
+      <div id="music-container" class="productos-container" aria-live="polite"></div>
+      <div id="catalog-pager" class="catalog-pager" aria-hidden="false"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="social">
+      <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.spotify.com/" target="_blank" rel="noopener noreferrer" aria-label="Spotify"><i class="fab fa-spotify"></i></a>
+      <a href="https://soundcloud.com/" target="_blank" rel="noopener noreferrer" aria-label="Soundcloud"><i class="fab fa-soundcloud"></i></a>
+      <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+    </div>
+    <p>© 2025 BeatFlow - Todos los derechos reservados</p>
+  </footer>
+
+  <script src="./js/script.js" defer></script>
+</body>
+</html>
